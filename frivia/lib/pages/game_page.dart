@@ -5,24 +5,28 @@ import 'package:frivia/providers/game_page_provider.dart';
 import 'package:provider/provider.dart';
 
 class GamePage extends StatelessWidget {
+  
+  final String DifficultyLevel;
   double? deviceHeight, deviceWidth;
 
   gamePageProvider? pageProvider;
+
+  GamePage({required this.DifficultyLevel});
 
   @override
   Widget build(BuildContext context) {
     deviceHeight = MediaQuery.of(context).size.height;
     deviceWidth = MediaQuery.of(context).size.width;
     return ChangeNotifierProvider(
-      create: (context) => gamePageProvider(context: context),
+      create: (context) => gamePageProvider(context: context, difficultyLevel: DifficultyLevel),
       child: buildUI(),
     );
   }
 
   Widget buildUI() {
-    return Builder(
-      builder: (context) {
-        pageProvider = context.watch<gamePageProvider>(); 
+    return Builder(builder: (context) {
+      pageProvider = context.watch<gamePageProvider>();
+      if (pageProvider!.questions != null) {
         return Scaffold(
           body: SafeArea(
             child: Container(
@@ -31,8 +35,12 @@ class GamePage extends StatelessWidget {
             ),
           ),
         );
+      } else {
+        return const Center(
+          child: CircularProgressIndicator(color: Colors.white),
+        );
       }
-    );
+    });
   }
 
   Widget gameUI() {
@@ -56,16 +64,18 @@ class GamePage extends StatelessWidget {
   }
 
   Widget questionText() {
-    return const Text(
-      'Khuzaima',
-      style: TextStyle(
+    return  Text(
+      pageProvider!.getCurrentQuesText(),
+      style: const TextStyle(
           color: Colors.white, fontWeight: FontWeight.w400, fontSize: 24),
     );
   }
 
   Widget trueButton() {
     return MaterialButton(
-      onPressed: () {},
+      onPressed: () {
+        pageProvider?.answerQusetion('True');
+      },
       color: Colors.green,
       minWidth: deviceWidth! * 0.80,
       height: deviceHeight! * 0.10,
@@ -78,7 +88,9 @@ class GamePage extends StatelessWidget {
 
   Widget falseButton() {
     return MaterialButton(
-      onPressed: () {},
+      onPressed: () {
+        pageProvider?.answerQusetion("False"); 
+      },
       color: Colors.red,
       minWidth: deviceWidth! * 0.80,
       height: deviceHeight! * 0.10,
