@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "971258974944",
+    "project_id": "snakemania-6a4a6",
+    "storage_bucket": "snakemania-6a4a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971258974944:android:dd347d6331fdb7e1f2b685",
+        "android_client_info": {
+          "package_name": "com.example.snakemania"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971258974944-sn5kfofrnddcbb8vhcc24ahmv3vbtdvg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxdD52PzenKPwm1QrSQoyh1fKKFzRDi3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971258974944-sn5kfofrnddcbb8vhcc24ahmv3vbtdvg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "904370352831",
+    "project_id": "authlogin-d1aaa",
+    "storage_bucket": "authlogin-d1aaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904370352831:android:4944f410397caeacd20c0a",
+        "android_client_info": {
+          "package_name": "com.example.authlogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904370352831-teablg1crfku5b1df7vtc4qaps5a99el.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC98CQcF658wd_bniZB6yxvpxiDUkp_Giw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904370352831-teablg1crfku5b1df7vtc4qaps5a99el.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
